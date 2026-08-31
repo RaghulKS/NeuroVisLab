@@ -1,0 +1,28 @@
+name = "pneumoniamnist-cnn-lifecycle-demo"
+
+[data]
+name = "pneumoniamnist"
+version = "medmnist-v2-28"
+url = "https://zenodo.org/records/10519652/files/pneumoniamnist.npz?download=1"
+max_train_samples = 1024
+max_val_samples = 256
+max_test_samples = 256
+
+[training]
+seed = 42
+epochs = 8
+batch_size = 64
+learning_rate = 0.001
+num_workers = 0
+device = "cpu"
+
+# Engineering gates for this intentionally short CPU demo, not clinical thresholds.
+[gates]
+min_accuracy = 0.0
+min_macro_f1 = 0.0
+max_ece = 1.0
+require_smoke_prediction = true
+
+[rollout]
+canary_percent = 10
+shadow_enabled = true

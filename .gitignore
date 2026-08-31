@@ -1,7 +1,10 @@
 .env
+.venv/
+.verify-venv/
 __pycache__/
 *.pyc
 .pytest_cache/
+.pytest-tmp/
 .mypy_cache/
 .ruff_cache/
 data/
@@ -19,4 +22,3 @@ frontend/.vite/
 .DS_Store
 .vscode/
 .idea/
-

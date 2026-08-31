@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Install
+        run: pip install -r requirements.txt
+      - name: Lint
+        run: ruff check app scripts tests
+      - name: Types
+        run: mypy app/mlops --ignore-missing-imports
+      - name: Unit tests
+        run: pytest -q
+      - name: Real data and model smoke test
+        run: python scripts/train_mlops.py --config configs/smoke.toml
+      - name: Container build
+        run: docker build -t neurovisionlab:${{ github.sha }} .

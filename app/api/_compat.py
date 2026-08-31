@@ -2,7 +2,6 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-
 try:
     from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 except ImportError:  # pragma: no cover - used only in minimal environments.

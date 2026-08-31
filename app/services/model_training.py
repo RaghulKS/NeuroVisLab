@@ -11,7 +11,7 @@ import numpy as np
 from app.config import settings
 from app.ml.training_loop import train_numpy_centroid_classifier
 from app.models import ModelRegistryEntry
-from app.services.dataset_loader import DatasetSplits, CaseRecord, create_synthetic_demo_dataset, load_any_dataset
+from app.services.dataset_loader import CaseRecord, DatasetSplits, create_synthetic_demo_dataset, load_any_dataset
 from app.services.model_evaluation import evaluate_model_outputs, save_metrics
 from app.services.multimodal_fusion import build_multimodal_features
 from app.services.preprocessing import feature_matrix

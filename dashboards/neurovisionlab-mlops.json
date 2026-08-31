@@ -1,0 +1,12 @@
+{
+  "title": "NeuroVisionLab MLOps - Research Demo",
+  "schemaVersion": 39,
+  "tags": ["mlops", "research-only"],
+  "panels": [
+    {"title": "Inference observations", "type": "stat", "targets": [{"expr": "neurovisionlab_inference_observations_total"}]},
+    {"title": "P95 inference latency (ms)", "type": "stat", "targets": [{"expr": "neurovisionlab_inference_latency_p95_ms"}]},
+    {"title": "Input brightness PSI", "type": "timeseries", "targets": [{"expr": "neurovisionlab_data_drift_psi"}]},
+    {"title": "Prediction drift (JSD)", "type": "timeseries", "targets": [{"expr": "neurovisionlab_prediction_drift_jsd"}]},
+    {"title": "Shadow disagreement", "type": "gauge", "targets": [{"expr": "neurovisionlab_shadow_disagreement_ratio"}]}
+  ]
+}

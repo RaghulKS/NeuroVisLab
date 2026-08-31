@@ -7,7 +7,7 @@ import numpy as np
 
 from app.config import settings
 from app.services.dataset_loader import CaseRecord, create_synthetic_demo_dataset, load_any_dataset
-from app.services.embedding_store import EmbeddingStore, RetrievedCase, cases_to_dicts
+from app.services.embedding_store import EmbeddingStore, cases_to_dicts
 from app.services.multimodal_fusion import SimpleTextEncoder
 from app.services.preprocessing import compute_image_features, metadata_feature_vector
 

@@ -25,10 +25,9 @@ except ImportError:  # pragma: no cover - lets local import checks run without F
     class CORSMiddleware:  # noqa: D401
         """Placeholder when FastAPI is not installed."""
 
-from app.api import data, explain, health, metrics, monitoring, predict, reports, retrieve, train
+from app.api import data, explain, health, lifecycle, metrics, monitoring, predict, reports, retrieve, serving, train
 from app.config import settings
 from app.database import init_db
-
 
 app = FastAPI(title=settings.project_name, version="0.1.0")
 
@@ -50,6 +49,8 @@ for router in (
     reports.router,
     metrics.router,
     monitoring.router,
+    lifecycle.router,
+    serving.router,
 ):
     app.include_router(router)
 

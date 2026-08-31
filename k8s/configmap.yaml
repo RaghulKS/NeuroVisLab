@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: neurovisionlab-config
+  labels:
+    app.kubernetes.io/name: neurovisionlab
+data:
+  NVL_ENV: "production-demo"
+  NVL_DATA_DIR: "/workspace/data"
+  NVL_ARTIFACTS_DIR: "/workspace/artifacts"
+  NVL_RANDOM_SEED: "42"

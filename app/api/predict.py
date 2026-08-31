@@ -9,8 +9,8 @@ from app.config import settings
 from app.database import log_case_prediction
 from app.ml.inference import latest_model_path, predict_image
 from app.services.calibration import uncertainty_flags
-from app.services.multimodal_fusion import evidence_summary_fields
 from app.services.dataset_loader import CaseRecord
+from app.services.multimodal_fusion import evidence_summary_fields
 
 router = APIRouter(prefix="/predict", tags=["prediction"])
 

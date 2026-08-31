@@ -9,6 +9,10 @@ pydantic>=2.6
 pytest>=8.0
 matplotlib>=3.8
 scikit-learn>=1.4
+torch>=2.2
+
+# Quality gates used by CI.
+ruff>=0.6
+mypy>=1.11
 
 # Optional advanced packages are documented in requirements-optional.txt.
-
